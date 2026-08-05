@@ -1,0 +1,44 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Environment / secrets ---
+.env
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Training artifacts (large / regenerable — not meant for git) ---
+checkpoints/
+*.pth
+*.pt
+*.h5
+*.ckpt
+backend/model_artifacts/
+
+# --- Dataset (large, download separately — see dataset/README.md) ---
+dataset/Training/
+dataset/Testing/
+dataset/*.zip
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- Logs ---
+*.log
