@@ -28,10 +28,16 @@ checkpoints/
 *.ckpt
 backend/model_artifacts/
 
-# --- Dataset (large, download separately — see dataset/README.md) ---
+# ==========================================================
+# Dataset
+# ==========================================================
+# Ignore the actual MRI dataset
 dataset/Training/
 dataset/Testing/
 dataset/*.zip
+
+# Keep dataset documentation
+!dataset/README.md
 
 # --- OS / editor cruft ---
 .DS_Store
