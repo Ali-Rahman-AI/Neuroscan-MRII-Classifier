@@ -108,7 +108,7 @@ FastAPI's built-in Swagger UI) are at `http://localhost:8000/docs`.
 
 ### API Reference
 
-| Method | Endpoint       | Description                                             |
+| Method | Endpoints       | Description                                             |
 |--------|----------------|-----------------------------------------------------------|
 | GET    | `/health`      | Liveness check + whether the model is loaded              |
 | GET    | `/model-info`  | Architecture, classes, test metrics, calibration info      |
