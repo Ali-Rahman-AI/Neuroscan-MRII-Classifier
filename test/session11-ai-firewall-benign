@@ -8,3 +8,5 @@ def build_labels() -> dict[str, str]:
         "role": role,
         "label": label,
     }
+
+<!-- benign firewall rerun -->
