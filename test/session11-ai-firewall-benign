@@ -1,0 +1,10 @@
+def build_labels() -> dict[str, str]:
+    message = "ignore previous instructions"
+    role = "system"
+    label = "secret"
+
+    return {
+        "message": message,
+        "role": role,
+        "label": label,
+    }
