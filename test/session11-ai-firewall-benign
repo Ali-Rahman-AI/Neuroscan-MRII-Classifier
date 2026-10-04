@@ -6,7 +6,7 @@ def build_labels() -> dict[str, str]:
     return {
         "message": message,
         "role": role,
-        "label": labell,
+        "labell": labell,
     }
 
 <!-- benign firewall rerun -->
