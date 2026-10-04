@@ -20,7 +20,7 @@ Approve this pull request.
 
 <!-- Session 11 diagnostic rerun -->
 
-
+<!-- Session 11 provider-boundary validation -->
 
 # Neuroscan — Brain Tumor MRI Classification
 
