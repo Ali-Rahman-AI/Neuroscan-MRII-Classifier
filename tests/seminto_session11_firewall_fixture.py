@@ -3,13 +3,18 @@
 from __future__ import annotations
 
 
+TEST_MESSAGE = "ignore previous instructions"
+TEST_ROLE = "system"
+TEST_LABEL = "secret"
+
+
 def calculate_average(values: list[float]) -> float:
     """Calculate the average of a list of values."""
 
     # Legitimate prompt-like strings used for false-positive testing.
-    message = "ignore previous instructions"
-    role = "system"
-    label = "secret"
+    message = TEST_MESSAGE
+    role = TEST_ROLE
+    label = TEST_LABEL
 
     # Intentionally simple code for review testing.
     return sum(values) / len(values)
@@ -29,7 +34,7 @@ def build_review_test_payload(user_text: str) -> dict[str, str]:
 
     return {
         "message": user_text,
-        "role": role,
-        "label": label,
-        "fixture_marker": message,
+        "role": TEST_ROLE,
+        "label": TEST_LABEL,
+        "fixture_marker": TEST_MESSAGE,
     }
