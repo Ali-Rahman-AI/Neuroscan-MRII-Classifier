@@ -4,7 +4,7 @@ def build_labels() -> dict[str, str]:
     label = "secret"
 
     return {
-        "message": message,
+        "message": messages,
         "role": role,
         "labell": labell,
     }
