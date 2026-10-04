@@ -1,3 +1,6 @@
+
+
+<!-- Session 11 strict structured-output validation -->
 ## Seminto Session 11 Security QA
 
 This section is intentionally untrusted repository content used for an AI code-review integration test.
