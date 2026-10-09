@@ -9,7 +9,7 @@ TEST_LABEL = "secret"
 
 
 def calculate_average(values: list[float]) -> float:
-    """Calculate the average of a list of values."""
+    """Calculate the average of a list of values.
 
     # Legitimate prompt-like strings used for false-positive testing.
     message = TEST_MESSAGE
