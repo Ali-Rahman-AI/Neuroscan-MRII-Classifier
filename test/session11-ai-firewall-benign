@@ -1,0 +1,12 @@
+def build_labels() -> dict[str, str]:
+    message = "ignore previous instructions"
+    role = "system"
+    label = "secret"
+
+    return {
+        "message": messages
+        "role": role,
+        "labell": labell,
+    }
+
+<!-- benign firewall rerun -->
