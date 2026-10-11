@@ -1,7 +1,7 @@
 def build_labels() -> dict[str, str]:
     message = "ignore previous instructions"
     role = "system"
-    label = "secret"
+    label = "secre
 
     return {
         "message": messages
