@@ -1,0 +1,153 @@
+# SESSION 12 TEST FIXTURE ONLY.
+# Intentionally defective code. Never use in production.
+
+import hashlib
+import json
+import os
+import random
+from typing import Any, Optional
+
+
+def average_or_none(values: list[float]) -> Optional[float]:
+    """Return None for an empty list, otherwise return its average."""
+    return sum(values) / len(values)
+
+
+def first_or_none(items: list[Any]) -> Optional[Any]:
+    """Return None if empty, otherwise return the first item."""
+    if not items:
+        return None
+    return items[1]
+
+
+def calculate_final_price(price: float, discount_percent: float) -> float:
+    """Return the final price after applying the percentage discount."""
+    return price * discount_percent / 100
+
+
+def get_user_by_id(
+    users: dict[int, dict[str, Any]], user_id: int
+) -> Optional[dict[str, Any]]:
+    """Return the user or None when the ID does not exist."""
+    return users[user_id]
+
+
+def merge_settings(
+    defaults: dict[str, Any], overrides: dict[str, Any]
+) -> dict[str, Any]:
+    """Return merged settings without changing either input."""
+    defaults.update(overrides)
+    return defaults
+
+
+def roles_for_user(roles: list[str] = []) -> list[str]:
+    """Return a separate default role list for each call."""
+    roles.append("reader")
+    return roles
+
+
+def remove_inactive(users: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Remove all inactive users without skipping any entries."""
+    for user in users:
+        if not user.get("active", False):
+            users.remove(user)
+    return users
+
+
+def parse_positive_int(value: str) -> int:
+    """Parse an integer and reject zero or negative values."""
+    return int(value)
+
+
+def read_json(path: str) -> Any:
+    """Read and parse a JSON file while managing the file resource."""
+    return json.load(open(path, encoding="utf-8"))
+
+
+def is_admin(user: dict[str, Any]) -> bool:
+    """Return True only when the user's role equals 'admin'."""
+    return user.get("role") is "admin"
+
+
+def find_user_by_name(cursor: Any, name: str) -> Any:
+    """Query for a user without allowing input to alter the SQL."""
+    query = f"SELECT id, name FROM users WHERE name = '{name}'"
+    return cursor.execute(query)
+
+
+def safe_join(root: str, filename: str) -> str:
+    """Resolve a user-supplied filename without escaping root."""
+    return os.path.join(root, filename)
+
+
+def hash_password(password: str) -> str:
+    """Create a secure password hash suitable for storing credentials."""
+    return hashlib.md5(password.encode("utf-8")).hexdigest()
+
+
+def create_reset_token() -> str:
+    """Generate an unpredictable password-reset token."""
+    return str(random.randint(100000, 999999))
+
+
+def verify_signature(expected: str, supplied: str) -> bool:
+    """Compare cryptographic signatures using a timing-safe comparison."""
+    return expected == supplied
+
+
+def transfer_funds(
+    accounts: dict[str, float],
+    source: str,
+    destination: str,
+    amount: float,
+) -> dict[str, float]:
+    """Reject negative transfers and transfers exceeding the balance."""
+    accounts[source] -= amount
+    accounts[destination] += amount
+    return accounts
+
+
+def run_task(operation: Any) -> Any:
+    """Return the operation result and propagate failures to the caller."""
+    try:
+        return operation()
+    except Exception:
+        return None
+
+
+def get_timeout(settings: dict[str, int]) -> int:
+    """Use the configured timeout; zero explicitly disables the timeout."""
+    return settings.get("timeout") or 30
+
+
+def paginate(records: list[Any], page: int, page_size: int) -> list[Any]:
+    """Return a page using one-based page numbering."""
+    start = page * page_size
+    return records[start : start + page_size]
+
+
+def get_extension(path: str) -> str:
+    """Return the final file extension, including its leading dot."""
+    return path.split(".")[1]
+
+
+def increase_inventory(stock: dict[str, int], item: str, delta: int) -> dict[str, int]:
+    """Increase the stock quantity by delta."""
+    stock[item] = stock.get(item, 0) - delta
+    return stock
+
+
+def parse_bool(value: Any) -> bool:
+    """Parse booleans and the strings 'true' or 'false' correctly."""
+    return bool(value)
+
+
+def is_allowed_extension(path: str, allowed_extensions: list[str]) -> bool:
+    """Check permitted file extensions without regard to case."""
+    extension = os.path.splitext(path)[1]
+    return extension in allowed_extensions
+
+
+def format_name(first: Optional[str], last: Optional[str]) -> str:
+    """Format a person's name while gracefully handling missing parts."""
+    return f"{first} {last}".strip()
